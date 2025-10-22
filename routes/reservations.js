@@ -150,7 +150,11 @@ router.patch('/:id', auth, async (req, res) => {
             item.reserved = Math.max(0, item.reserved - (reservation.quantity || 1));
             await item.save();
         } else if (oldStatus === 'RETURN_PENDING' && newStatus === 'RETURNED') {
-            // Admin approved the return
+            // Admin approved the return request
+            item.reserved = Math.max(0, item.reserved - (reservation.quantity || 1));
+            await item.save();
+        } else if (oldStatus === 'APPROVED' && newStatus === 'RETURNED') {
+            // Admin directly marked approved item as returned
             item.reserved = Math.max(0, item.reserved - (reservation.quantity || 1));
             await item.save();
         }
