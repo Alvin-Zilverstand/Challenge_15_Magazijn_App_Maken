@@ -108,18 +108,18 @@ router.patch('/:id', auth, async (req, res) => {
         // Check authorization
         const isAdmin = req.user.role === 'admin';
         const isOwner = reservation.userId._id.toString() === req.user._id.toString();
-        const isReturning = req.body.status === 'RETURNED';
+        const isReturning = req.body.status === 'RETURN_PENDING';
 
         if (!isAdmin && (!isOwner || !isReturning)) {
             return res.status(403).json({ 
-                message: 'Not authorized. Students can only return their own items.' 
+                message: 'Not authorized. Students can only request return of their own items.' 
             });
         }
 
         // Additional validation for students
         if (!isAdmin && isReturning && reservation.status !== 'APPROVED') {
             return res.status(400).json({ 
-                message: 'Can only return approved items' 
+                message: 'Can only request return for approved items' 
             });
         }
 
@@ -143,7 +143,8 @@ router.patch('/:id', auth, async (req, res) => {
         if (oldStatus === 'PENDING' && newStatus === 'REJECTED') {
             item.reserved = Math.max(0, item.reserved - (reservation.quantity || 1));
             await item.save();
-        } else if (oldStatus === 'APPROVED' && newStatus === 'RETURNED') {
+        } else if (oldStatus === 'RETURN_PENDING' && newStatus === 'RETURNED') {
+            // Admin approved the return
             item.reserved = Math.max(0, item.reserved - (reservation.quantity || 1));
             await item.save();
         }

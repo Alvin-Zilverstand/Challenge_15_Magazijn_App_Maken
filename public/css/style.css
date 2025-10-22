@@ -299,6 +299,12 @@ body {
     border: 1px solid var(--vista-grey);
 }
 
+.reservation-return_pending {
+    background-color: #ffc107 !important;
+    color: var(--vista-blue) !important;
+    border: 1px solid var(--vista-peach);
+}
+
 .reservation-returned {
     background-color: var(--vista-peach) !important;
     color: var(--vista-white) !important;

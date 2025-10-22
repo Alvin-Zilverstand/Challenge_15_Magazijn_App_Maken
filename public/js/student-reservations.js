@@ -87,11 +87,13 @@ function filterAndDisplayReservations() {
                         <i class="bi bi-x-circle"></i> Cancel
                     </button>
                 ` : reservation.status === 'APPROVED' ? `
-                    <button class="btn btn-sm btn-info" onclick="returnReservation('${reservation._id}')" title="Return Item">
-                        <i class="bi bi-arrow-return-left"></i> Return
+                    <button class="btn btn-sm btn-info" onclick="returnReservation('${reservation._id}')" title="Request Return">
+                        <i class="bi bi-arrow-return-left"></i> Request Return
                     </button>
                 ` : reservation.status === 'REJECTED' ? `
                     <span class="text-muted"><i class="bi bi-x-circle"></i> Rejected</span>
+                ` : reservation.status === 'RETURN_PENDING' ? `
+                    <span class="text-warning"><i class="bi bi-clock"></i> Return Pending Approval</span>
                 ` : reservation.status === 'RETURNED' ? `
                     <span class="text-success"><i class="bi bi-check-circle"></i> Returned</span>
                 ` : ''}
@@ -126,7 +128,7 @@ async function deleteReservation(reservationId) {
 
 // Return reservation (mark as returned)
 async function returnReservation(reservationId) {
-    if (!confirm('Are you sure you want to return this item?')) return;
+    if (!confirm('Are you sure you want to request return for this item? An admin will need to approve the return.')) return;
 
     try {
         const response = await fetch(`/api/reservations/${reservationId}`, {
@@ -135,29 +137,29 @@ async function returnReservation(reservationId) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
-            body: JSON.stringify({ status: 'RETURNED' })
+            body: JSON.stringify({ status: 'RETURN_PENDING' })
         });
 
         if (response.ok) {
-            // Successfully returned, reload reservations
+            // Successfully requested return, reload reservations
             await loadReservations();
             // Show success message
             const alert = document.createElement('div');
             alert.className = 'alert alert-success alert-dismissible fade show';
             alert.innerHTML = `
-                Item returned successfully!
+                Return requested successfully! An admin will review your request.
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             `;
             const container = document.querySelector('.container');
             container.prepend(alert);
-            setTimeout(() => alert.remove(), 3000);
+            setTimeout(() => alert.remove(), 5000);
         } else {
             const error = await response.json();
-            throw new Error(error.message || 'Failed to return item');
+            throw new Error(error.message || 'Failed to request return');
         }
     } catch (error) {
-        console.error('Error returning item:', error);
-        alert(`Failed to return item: ${error.message}`);
+        console.error('Error requesting return:', error);
+        alert(`Failed to request return: ${error.message}`);
     }
 }
 
