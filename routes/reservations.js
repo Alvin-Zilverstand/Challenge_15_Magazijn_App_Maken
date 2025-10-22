@@ -97,7 +97,7 @@ router.post('/', auth, async (req, res) => {
     }
 });
 
-// Update reservation status (admin can update any, students can only mark as returned)
+// Update reservation status (admin can update any, students can only request returns)
 router.patch('/:id', auth, async (req, res) => {
     try {
         const reservation = await Reservation.findById(req.params.id).populate('userId');
@@ -108,19 +108,25 @@ router.patch('/:id', auth, async (req, res) => {
         // Check authorization
         const isAdmin = req.user.role === 'admin';
         const isOwner = reservation.userId._id.toString() === req.user._id.toString();
-        const isReturning = req.body.status === 'RETURN_PENDING';
+        const isRequestingReturn = req.body.status === 'RETURN_PENDING';
 
-        if (!isAdmin && (!isOwner || !isReturning)) {
-            return res.status(403).json({ 
-                message: 'Not authorized. Students can only request return of their own items.' 
-            });
-        }
-
-        // Additional validation for students
-        if (!isAdmin && isReturning && reservation.status !== 'APPROVED') {
-            return res.status(400).json({ 
-                message: 'Can only request return for approved items' 
-            });
+        // Students can only request returns on their own approved reservations
+        if (!isAdmin) {
+            if (!isOwner) {
+                return res.status(403).json({ 
+                    message: 'Not authorized. Students can only request return of their own items.' 
+                });
+            }
+            if (!isRequestingReturn) {
+                return res.status(403).json({ 
+                    message: 'Students can only request returns, not change other statuses.' 
+                });
+            }
+            if (reservation.status !== 'APPROVED') {
+                return res.status(400).json({ 
+                    message: 'Can only request return for approved items' 
+                });
+            }
         }
 
         const item = await Item.findById(reservation.itemId);

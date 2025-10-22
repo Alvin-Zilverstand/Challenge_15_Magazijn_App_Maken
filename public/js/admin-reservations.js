@@ -83,7 +83,7 @@ function filterAndDisplayReservations() {
                             <i class="bi bi-x-lg"></i><span class="btn-text"> Reject Return</span>
                         </button>
                     ` : reservation.status === 'APPROVED' ? `
-                        <span class="text-info"><i class="bi bi-check-circle"></i><span class="btn-text"> Item Loaned</span></span>
+                        <span class="text-success"><i class="bi bi-check-circle"></i><span class="btn-text"> Currently Borrowed</span></span>
                     ` : reservation.status === 'RETURNED' ? `
                         <button class="btn btn-secondary" onclick="archiveReservation('${reservation._id}')" title="Archive Reservation">
                             <i class="bi bi-archive"></i><span class="btn-text"> Archive</span>
