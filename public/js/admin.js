@@ -20,6 +20,7 @@ async function initializePage() {
         await loadItems();
         displayUserInfo();
         setupEventListeners();  // Move this after displayUserInfo to ensure DOM is ready
+        startAutoRefresh();
         console.log('Page initialization complete');
     } catch (error) {
         console.error('Error during page initialization:', error);
@@ -434,3 +435,66 @@ document.addEventListener('DOMContentLoaded', async () => {
         alert('Error initializing page: ' + error.message);
     }
 });
+
+// Auto refresh functionality
+let refreshInterval;
+let lastItemsChecksum = '';
+
+function startAutoRefresh() {
+    // Refresh every 30 seconds
+    refreshInterval = setInterval(async () => {
+        await checkForUpdates();
+    }, 30000);
+}
+
+function stopAutoRefresh() {
+    if (refreshInterval) {
+        clearInterval(refreshInterval);
+    }
+}
+
+async function checkForUpdates() {
+    try {
+        const response = await fetch('/api/items', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        if (response.ok) {
+            const currentItems = await response.json();
+            
+            // Create a simple checksum of the items data
+            const currentChecksum = JSON.stringify(currentItems.map(item => ({
+                id: item._id,
+                quantity: item.quantity,
+                reserved: item.reserved || 0
+            })));
+
+            // If items changed, refresh the display
+            if (lastItemsChecksum && currentChecksum !== lastItemsChecksum) {
+                items = currentItems;
+                displayItems();
+                
+                // Show update notification
+                showUpdateNotification();
+            }
+            
+            lastItemsChecksum = currentChecksum;
+        }
+    } catch (error) {
+        console.error('Error checking for updates:', error);
+    }
+}
+
+function showUpdateNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'alert alert-info alert-dismissible fade show';
+    notification.innerHTML = `
+        <i class="bi bi-info-circle"></i> Items updated!
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    const container = document.querySelector('.container');
+    container.prepend(notification);
+    setTimeout(() => notification.remove(), 3000);
+}

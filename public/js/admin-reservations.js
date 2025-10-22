@@ -17,6 +17,7 @@ async function initializePage() {
     await loadReservations();
     setupEventListeners();
     displayUserInfo();
+    startAutoRefresh();
 }
 
 // Display user info
@@ -182,6 +183,69 @@ function setupEventListeners() {
         localStorage.clear();
         window.location.href = '/index.html';
     });
+}
+
+// Auto refresh functionality
+let refreshInterval;
+let lastReservationsChecksum = '';
+
+function startAutoRefresh() {
+    // Refresh every 15 seconds for reservations (more frequent for status changes)
+    refreshInterval = setInterval(async () => {
+        await checkForReservationUpdates();
+    }, 15000);
+}
+
+function stopAutoRefresh() {
+    if (refreshInterval) {
+        clearInterval(refreshInterval);
+    }
+}
+
+async function checkForReservationUpdates() {
+    try {
+        const response = await fetch('/api/reservations', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        if (response.ok) {
+            const currentReservations = await response.json();
+            
+            // Create a simple checksum of the reservations data
+            const currentChecksum = JSON.stringify(currentReservations.map(res => ({
+                id: res._id,
+                status: res.status,
+                quantity: res.quantity || 1
+            })));
+
+            // If reservations changed, refresh the display
+            if (lastReservationsChecksum && currentChecksum !== lastReservationsChecksum) {
+                reservations = currentReservations;
+                filterAndDisplayReservations();
+                
+                // Show update notification
+                showUpdateNotification();
+            }
+            
+            lastReservationsChecksum = currentChecksum;
+        }
+    } catch (error) {
+        console.error('Error checking for reservation updates:', error);
+    }
+}
+
+function showUpdateNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'alert alert-info alert-dismissible fade show';
+    notification.innerHTML = `
+        <i class="bi bi-info-circle"></i> Reservations updated!
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    const container = document.querySelector('.container');
+    container.prepend(notification);
+    setTimeout(() => notification.remove(), 3000);
 }
 
 // Initialize the page when DOM is loaded
