@@ -1,3 +1,3 @@
 PORT=your_webserver_port
 MONGODB_URI=mongodb://username:password@ip-or-domain:27017/your_database
-JWT_SECRET=your_jwt_secret_keynp
+JWT_SECRET=your_jwt_secret_key_here
