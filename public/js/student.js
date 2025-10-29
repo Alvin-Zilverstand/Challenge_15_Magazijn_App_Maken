@@ -103,9 +103,22 @@ let currentViewMode = localStorage.getItem('studentViewMode') || 'grid';
 // Display items based on current view mode
 function displayItems() {
     const locationFilter = document.getElementById('locationFilter').value;
-    const filteredItems = locationFilter === 'all' 
-        ? items 
-        : items.filter(item => item.location === locationFilter);
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    
+    let filteredItems = items;
+    
+    // Apply location filter
+    if (locationFilter !== 'all') {
+        filteredItems = filteredItems.filter(item => item.location === locationFilter);
+    }
+    
+    // Apply search filter
+    if (searchTerm.trim() !== '') {
+        filteredItems = filteredItems.filter(item => 
+            item.name.toLowerCase().includes(searchTerm) || 
+            (item.description && item.description.toLowerCase().includes(searchTerm))
+        );
+    }
 
     // Update view mode buttons active state
     const viewButtons = document.querySelectorAll('.view-mode-btn');
@@ -229,6 +242,23 @@ function setupEventListeners() {
     document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.clear();
         window.location.href = '/index.html';
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    
+    searchInput.addEventListener('input', displayItems);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            displayItems();
+        }
+    });
+    
+    clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        displayItems();
+        searchInput.focus();
     });
     
     // View mode toggle listeners

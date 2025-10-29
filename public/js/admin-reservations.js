@@ -46,11 +46,16 @@ async function loadReservations() {
 function filterAndDisplayReservations() {
     const locationFilter = document.getElementById('locationFilter').value;
     const statusFilter = document.getElementById('statusFilter').value;
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
     const filteredReservations = reservations.filter(reservation => {
         const locationMatch = locationFilter === 'all' || reservation.location === locationFilter;
         const statusMatch = statusFilter === 'all' || reservation.status === statusFilter;
-        return locationMatch && statusMatch;
+        const searchMatch = searchTerm === '' || 
+            reservation.studentName.toLowerCase().includes(searchTerm) ||
+            reservation.itemName.toLowerCase().includes(searchTerm) ||
+            reservation.location.toLowerCase().includes(searchTerm);
+        return locationMatch && statusMatch && searchMatch;
     });
 
     const reservationsList = document.getElementById('reservationsList');
@@ -189,6 +194,23 @@ function setupEventListeners() {
     document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.clear();
         window.location.href = '/index.html';
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    
+    searchInput.addEventListener('input', filterAndDisplayReservations);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            filterAndDisplayReservations();
+        }
+    });
+    
+    clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        filterAndDisplayReservations();
+        searchInput.focus();
     });
 }
 
