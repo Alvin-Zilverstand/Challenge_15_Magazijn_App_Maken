@@ -59,6 +59,22 @@ async function loadItems() {
     }
 }
 
+// Filter items based on search term
+function getFilteredItems() {
+    const searchTerm = document.getElementById('searchInput') ? 
+        document.getElementById('searchInput').value.toLowerCase() : '';
+    
+    if (searchTerm.trim() === '') {
+        return items;
+    }
+    
+    return items.filter(item => 
+        item.name.toLowerCase().includes(searchTerm) || 
+        (item.description && item.description.toLowerCase().includes(searchTerm)) ||
+        item.location.toLowerCase().includes(searchTerm)
+    );
+}
+
 // Display items based on current view mode
 function displayItems() {
     if (currentView === 'grid') {
@@ -74,7 +90,8 @@ function displayGridView() {
     document.getElementById('itemsList').classList.add('d-none');
     itemsGrid.classList.remove('d-none');
 
-    itemsGrid.innerHTML = items.map(item => `
+    const filteredItems = getFilteredItems();
+    itemsGrid.innerHTML = filteredItems.map(item => `
         <div class="col-md-4 col-lg-3">
             <div class="card item-card">
                 <img src="${item.imageUrl || '/images/default-item.png'}" class="item-image" alt="${item.name}">
@@ -102,7 +119,8 @@ function displayListView() {
     itemsList.classList.remove('d-none');
 
     const itemsListBody = document.getElementById('itemsListBody');
-    itemsListBody.innerHTML = items.map(item => `
+    const filteredItems = getFilteredItems();
+    itemsListBody.innerHTML = filteredItems.map(item => `
         <tr>
             <td><img src="${item.imageUrl || '/images/default-item.png'}" class="item-thumbnail" alt="${item.name}"></td>
             <td>${item.name}</td>
@@ -370,6 +388,29 @@ function setupEventListeners() {
                 currentView = this.dataset.mode;
                 displayItems();
             });
+        });
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', displayItems);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                displayItems();
+            }
+        });
+    }
+    
+    if (clearSearch) {
+        clearSearch.addEventListener('click', () => {
+            if (searchInput) {
+                searchInput.value = '';
+                displayItems();
+                searchInput.focus();
+            }
         });
     }
 
