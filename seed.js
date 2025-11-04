@@ -28,33 +28,69 @@ async function seedDatabase() {
         await User.create({
             username: 'student',
             password: studentPassword,
+            email: '123456@vistacollege.nl',
             role: 'student'
         });
 
-        // Create some test items
+        // Create some test items with multilingual support
         const items = [
             {
-                name: 'Laptop',
+                name: {
+                    en: 'Laptop',
+                    nl: 'Laptop'
+                },
+                description: {
+                    en: 'High-performance laptop for programming and design work',
+                    nl: 'Krachtige laptop voor programmeren en ontwerpwerk'
+                },
                 location: 'Heerlen',
                 quantity: 5
             },
             {
-                name: 'Projector',
+                name: {
+                    en: 'Projector',
+                    nl: 'Beamer'
+                },
+                description: {
+                    en: 'HD projector for presentations and lectures',
+                    nl: 'HD-beamer voor presentaties en lezingen'
+                },
                 location: 'Maastricht',
                 quantity: 3
             },
             {
-                name: 'Microscope',
+                name: {
+                    en: 'Microscope',
+                    nl: 'Microscoop'
+                },
+                description: {
+                    en: 'Digital microscope for laboratory work',
+                    nl: 'Digitale microscoop voor laboratoriumwerk'
+                },
                 location: 'Sittard',
                 quantity: 4
             },
             {
-                name: 'Tablet',
+                name: {
+                    en: 'Tablet',
+                    nl: 'Tablet'
+                },
+                description: {
+                    en: 'Portable tablet for mobile learning and presentations',
+                    nl: 'Draagbare tablet voor mobiel leren en presentaties'
+                },
                 location: 'Heerlen',
                 quantity: 10
             },
             {
-                name: 'Camera',
+                name: {
+                    en: 'Camera',
+                    nl: 'Camera'
+                },
+                description: {
+                    en: 'Professional DSLR camera for photography courses',
+                    nl: 'Professionele spiegelreflexcamera voor fotografiecursussen'
+                },
                 location: 'Maastricht',
                 quantity: 2
             }

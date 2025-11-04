@@ -20,6 +20,14 @@ async function initializePage() {
     startAutoRefresh();
 }
 
+// Reload content when language changes
+function reloadContent() {
+    displayReservations();
+}
+
+// Make reloadContent available globally for translation manager
+window.reloadContent = reloadContent;
+
 // Display user info
 function displayUserInfo() {
     const username = localStorage.getItem('username');

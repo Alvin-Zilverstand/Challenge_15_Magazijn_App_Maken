@@ -21,6 +21,15 @@ async function initializePage() {
     startAutoRefresh();
 }
 
+// Reload content when language changes
+function reloadContent() {
+    displayItems();
+    loadMyReservations();
+}
+
+// Make reloadContent available globally for translation manager
+window.reloadContent = reloadContent;
+
 // Display user info
 function displayUserInfo() {
     const username = localStorage.getItem('username');
@@ -112,12 +121,20 @@ function displayItems() {
         filteredItems = filteredItems.filter(item => item.location === locationFilter);
     }
     
-    // Apply search filter
+    // Apply search filter with translation support
     if (searchTerm.trim() !== '') {
-        filteredItems = filteredItems.filter(item => 
-            item.name.toLowerCase().includes(searchTerm) || 
-            (item.description && item.description.toLowerCase().includes(searchTerm))
-        );
+        filteredItems = filteredItems.filter(item => {
+            if (window.translationManager) {
+                const localizedItem = window.translationManager.getLocalizedItem(item);
+                return localizedItem.name.toLowerCase().includes(searchTerm) || 
+                       (localizedItem.description && localizedItem.description.toLowerCase().includes(searchTerm));
+            } else {
+                // Fallback for when translation manager isn't loaded yet (default to Dutch)
+                const name = item.name?.nl || item.name?.en || item.name || '';
+                const description = item.description?.nl || item.description?.en || item.description || '';
+                return name.toLowerCase().includes(searchTerm) || description.toLowerCase().includes(searchTerm);
+            }
+        });
     }
 
     // Update view mode buttons active state
@@ -133,13 +150,19 @@ function displayItems() {
     if (currentViewMode === 'grid') {
         // Display items in grid view
         const gridContainer = document.getElementById('itemsGrid');
-        gridContainer.innerHTML = filteredItems.map(item => `
+        gridContainer.innerHTML = filteredItems.map(item => {
+            const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
+                name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
+                description: item.description?.nl || item.description?.en || item.description || ''
+            };
+            
+            return `
             <div class="col-md-4 col-lg-3 mb-4">
                 <div class="card h-100" style="cursor: pointer" onclick='showItemDetails(${JSON.stringify(item).replace(/"/g, '&quot;')})'>
-                    <img src="${item.imageUrl || '/images/default-item.png'}" class="card-img-top" alt="${item.name}" style="height: 200px; object-fit: cover;">
+                    <img src="${item.imageUrl || '/images/default-item.png'}" class="card-img-top" alt="${localizedItem.name}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title">${item.name}</h5>
-                        <p class="card-text small text-muted">${item.description || 'No description available'}</p>
+                        <h5 class="card-title">${localizedItem.name}</h5>
+                        <p class="card-text small text-muted">${localizedItem.description || 'No description available'}</p>
                         <p class="card-text">
                             <small class="text-muted">Location: ${item.location}</small><br>
                             <small class="text-muted">Available: ${item.quantity - (item.reserved || 0)}</small>
@@ -151,15 +174,22 @@ function displayItems() {
                     </div>
                 </div>
             </div>
-        `).join('');
+            `;
+        }).join('');
     } else {
         // Display items in list view
         const itemsListBody = document.getElementById('itemsListBody');
-        itemsListBody.innerHTML = filteredItems.map(item => `
+        itemsListBody.innerHTML = filteredItems.map(item => {
+            const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
+                name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
+                description: item.description?.nl || item.description?.en || item.description || ''
+            };
+            
+            return `
             <tr class="item-row" style="cursor: pointer" onclick="showItemDetails(${JSON.stringify(item).replace(/"/g, '&quot;')})">
-                <td><img src="${item.imageUrl || '/images/default-item.png'}" class="item-thumbnail" alt="${item.name}"></td>
-                <td>${item.name}</td>
-                <td>${item.description || 'No description available'}</td>
+                <td><img src="${item.imageUrl || '/images/default-item.png'}" class="item-thumbnail" alt="${localizedItem.name}"></td>
+                <td>${localizedItem.name}</td>
+                <td>${localizedItem.description || 'No description available'}</td>
                 <td>${item.location}</td>
                 <td>${item.quantity - (item.reserved || 0)}</td>
                 <td>
@@ -169,7 +199,8 @@ function displayItems() {
                     }
                 </td>
             </tr>
-        `).join('');
+            `;
+        }).join('');
     }
 }
 

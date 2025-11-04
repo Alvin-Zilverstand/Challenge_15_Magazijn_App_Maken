@@ -2,12 +2,24 @@ const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        en: {
+            type: String,
+            required: true
+        },
+        nl: {
+            type: String,
+            required: true
+        }
     },
     description: {
-        type: String,
-        default: ''
+        en: {
+            type: String,
+            default: ''
+        },
+        nl: {
+            type: String,
+            default: ''
+        }
     },
     location: {
         type: String,
