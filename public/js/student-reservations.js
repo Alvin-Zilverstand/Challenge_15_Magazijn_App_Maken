@@ -108,7 +108,7 @@ function filterAndDisplayReservations() {
 
 // Delete (cancel) reservation
 async function deleteReservation(reservationId) {
-    if (!confirm('Are you sure you want to cancel this reservation?')) return;
+    if (!confirm('Weet je zeker dat je deze reservering wilt annuleren?')) return;
 
     try {
         const response = await fetch(`/api/reservations/${reservationId}`, {
@@ -122,17 +122,17 @@ async function deleteReservation(reservationId) {
             await loadReservations();
         } else {
             const error = await response.json();
-            alert(error.message || 'Failed to cancel reservation');
+            alert(error.message || 'Kon reservering niet annuleren');
         }
     } catch (error) {
         console.error('Error canceling reservation:', error);
-        alert('Failed to cancel reservation');
+        alert('Kon reservering niet annuleren');
     }
 }
 
 // Return reservation (mark as returned)
 async function returnReservation(reservationId) {
-    if (!confirm('Are you sure you want to request return for this item? An admin will need to approve the return.')) return;
+    if (!confirm('Weet je zeker dat je retour wilt aanvragen voor dit artikel? Een admin moet de retour goedkeuren.')) return;
 
     try {
         const response = await fetch(`/api/reservations/${reservationId}`, {
@@ -151,7 +151,7 @@ async function returnReservation(reservationId) {
             const alert = document.createElement('div');
             alert.className = 'alert alert-success alert-dismissible fade show';
             alert.innerHTML = `
-                Return requested successfully! An admin will review your request.
+                Retour succesvol aangevraagd! Een admin zal je verzoek beoordelen.
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             `;
             const container = document.querySelector('.container');
@@ -159,11 +159,11 @@ async function returnReservation(reservationId) {
             setTimeout(() => alert.remove(), 5000);
         } else {
             const error = await response.json();
-            throw new Error(error.message || 'Failed to request return');
+            throw new Error(error.message || 'Kon retour niet aanvragen');
         }
     } catch (error) {
         console.error('Error requesting return:', error);
-        alert(`Failed to request return: ${error.message}`);
+        alert(`Kon retour niet aanvragen: ${error.message}`);
     }
 }
 

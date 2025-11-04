@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warehouse Dashboard - Student</title>
+    <title>Magazijn Dashboard - Student</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
@@ -12,22 +12,22 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">School Warehouse</a>
+            <a class="navbar-brand" href="#">School Magazijn</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="student.html">Available Items</a>
+                        <a class="nav-link active" href="student.html">Beschikbare Artikelen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="student-reservations.html">My Reservations</a>
+                        <a class="nav-link" href="student-reservations.html">Mijn Reserveringen</a>
                     </li>
                 </ul>
                 <div class="navbar-nav ms-auto">
                     <span class="nav-item nav-link text-light" id="userInfo"></span>
-                    <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+                    <a class="nav-link" href="#" id="logoutBtn">Uitloggen</a>
                 </div>
             </div>
         </div>
@@ -36,20 +36,20 @@
     <div class="container mt-4">
         <div class="row mb-4">
             <div class="col-auto">
-                <h2>Available Items</h2>
+                <h2>Beschikbare Artikelen</h2>
             </div>
             <div class="col-md-4">
                 <div class="input-group search-input-group">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search items...">
-                    <button class="btn btn-outline-secondary" type="button" id="clearSearch" title="Clear search">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Zoek artikelen...">
+                    <button class="btn btn-outline-secondary" type="button" id="clearSearch" title="Zoekopdracht wissen">
                         <i class="bi bi-x-lg"></i>
                     </button>
                 </div>
             </div>
             <div class="col-auto ms-auto">
                 <select class="form-select me-2" id="locationFilter">
-                    <option value="all">All Locations</option>
+                    <option value="all">Alle Locaties</option>
                     <option value="Heerlen">Heerlen</option>
                     <option value="Maastricht">Maastricht</option>
                     <option value="Sittard">Sittard</option>
@@ -58,10 +58,10 @@
             <div class="col-auto">
                 <div class="btn-group">
                     <button type="button" class="btn btn-outline-primary view-mode-btn active" data-mode="grid">
-                        <i class="bi bi-grid"></i> Grid
+                        <i class="bi bi-grid"></i> Raster
                     </button>
                     <button type="button" class="btn btn-outline-primary view-mode-btn" data-mode="list">
-                        <i class="bi bi-list"></i> List
+                        <i class="bi bi-list"></i> Lijst
                     </button>
                 </div>
             </div>
@@ -78,12 +78,12 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Image</th>
-                            <th>Item Name</th>
-                            <th>Description</th>
-                            <th>Location</th>
-                            <th>Quantity Available</th>
-                            <th>Action</th>
+                            <th>Afbeelding</th>
+                            <th>Artikelnaam</th>
+                            <th>Beschrijving</th>
+                            <th>Locatie</th>
+                            <th>Beschikbare Hoeveelheid</th>
+                            <th>Actie</th>
                         </tr>
                     </thead>
                     <tbody id="itemsListBody">

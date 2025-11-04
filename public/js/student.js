@@ -39,7 +39,7 @@ async function loadItems() {
         displayItems();
     } catch (error) {
         console.error('Error loading items:', error);
-        alert('Failed to load items');
+        alert('Kon artikelen niet laden');
     }
 }
 
@@ -185,7 +185,7 @@ async function loadMyReservations() {
         displayMyReservations();
     } catch (error) {
         console.error('Error loading reservations:', error);
-        alert('Failed to load reservations');
+        alert('Kon reserveringen niet laden');
     }
 }
 
@@ -221,11 +221,11 @@ async function reserveItem(itemId, quantity = 1) {
             window.location.href = '/student-reservations.html';
         } else {
             const error = await response.json();
-            alert(error.message || 'Failed to reserve item');
+            alert(error.message || 'Kon artikel niet reserveren');
         }
     } catch (error) {
         console.error('Error reserving item:', error);
-        alert('Failed to reserve item');
+        alert('Kon artikel niet reserveren');
     }
 }
 
