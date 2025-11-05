@@ -77,10 +77,18 @@ function getFilteredItems() {
     }
     
     return items.filter(item => {
-        if (window.translationManager) {
-            const localizedItem = window.translationManager.getLocalizedItem(item);
+        const translationManager = window.ensureTranslationManager ? window.ensureTranslationManager() : null;
+        if (translationManager) {
+            const localizedItem = translationManager.getLocalizedItem(item);
             return localizedItem.name.toLowerCase().includes(searchTerm) || 
                    (localizedItem.description && localizedItem.description.toLowerCase().includes(searchTerm)) ||
+                   item.location.toLowerCase().includes(searchTerm);
+        } else if (window.getItemDisplayText) {
+            const currentLang = localStorage.getItem('language') || 'nl';
+            const name = window.getItemDisplayText(item, 'name', currentLang);
+            const description = window.getItemDisplayText(item, 'description', currentLang);
+            return name.toLowerCase().includes(searchTerm) || 
+                   description.toLowerCase().includes(searchTerm) ||
                    item.location.toLowerCase().includes(searchTerm);
         } else {
             // Fallback for when translation manager isn't loaded yet (default to Dutch)
@@ -110,10 +118,28 @@ function displayGridView() {
 
     const filteredItems = getFilteredItems();
     itemsGrid.innerHTML = filteredItems.map(item => {
-        const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
-            name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
-            description: item.description?.nl || item.description?.en || item.description || ''
-        };
+        // Use multiple fallback strategies
+        const translationManager = window.ensureTranslationManager ? window.ensureTranslationManager() : null;
+        let localizedItem;
+        
+        if (translationManager) {
+            localizedItem = translationManager.getLocalizedItem(item);
+        } else if (window.getItemDisplayText) {
+            // Use debug helper fallback
+            const currentLang = localStorage.getItem('language') || 'nl';
+            localizedItem = {
+                ...item,
+                name: window.getItemDisplayText(item, 'name', currentLang),
+                description: window.getItemDisplayText(item, 'description', currentLang)
+            };
+        } else {
+            // Final fallback
+            localizedItem = {
+                ...item,
+                name: (typeof item.name === 'object') ? (item.name?.nl || item.name?.en || 'Onbekend Artikel') : (item.name || 'Onbekend Artikel'),
+                description: (typeof item.description === 'object') ? (item.description?.nl || item.description?.en || 'Geen beschrijving beschikbaar') : (item.description || 'Geen beschrijving beschikbaar')
+            };
+        }
         
         return `
         <div class="col-md-4 col-lg-3">
@@ -146,10 +172,28 @@ function displayListView() {
     const itemsListBody = document.getElementById('itemsListBody');
     const filteredItems = getFilteredItems();
     itemsListBody.innerHTML = filteredItems.map(item => {
-        const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
-            name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
-            description: item.description?.nl || item.description?.en || item.description || ''
-        };
+        // Use multiple fallback strategies
+        const translationManager = window.ensureTranslationManager ? window.ensureTranslationManager() : null;
+        let localizedItem;
+        
+        if (translationManager) {
+            localizedItem = translationManager.getLocalizedItem(item);
+        } else if (window.getItemDisplayText) {
+            // Use debug helper fallback
+            const currentLang = localStorage.getItem('language') || 'nl';
+            localizedItem = {
+                ...item,
+                name: window.getItemDisplayText(item, 'name', currentLang),
+                description: window.getItemDisplayText(item, 'description', currentLang)
+            };
+        } else {
+            // Final fallback
+            localizedItem = {
+                ...item,
+                name: (typeof item.name === 'object') ? (item.name?.nl || item.name?.en || 'Onbekend Artikel') : (item.name || 'Onbekend Artikel'),
+                description: (typeof item.description === 'object') ? (item.description?.nl || item.description?.en || 'Geen beschrijving beschikbaar') : (item.description || 'Geen beschrijving beschikbaar')
+            };
+        }
         
         return `
         <tr>

@@ -80,6 +80,10 @@ const translations = {
         'confirm-return-request': 'Are you sure you want to request return for this item? An admin will need to approve the return.',
         'return-request-success': 'Return requested successfully! An admin will review your request.',
         
+        // Item fallbacks
+        'unknown-item': 'Unknown Item',
+        'no-description': 'No description available',
+        
         // Management
         'inventory-management': 'Inventory Management',
         'reservation-management': 'Reservation Management'
@@ -162,6 +166,10 @@ const translations = {
         'confirm-cancel-reservation': 'Weet je zeker dat je deze reservering wilt annuleren?',
         'confirm-return-request': 'Weet je zeker dat je retour wilt aanvragen voor dit artikel? Een admin moet de retour goedkeuren.',
         'return-request-success': 'Retour succesvol aangevraagd! Een admin zal je verzoek beoordelen.',
+        
+        // Item fallbacks
+        'unknown-item': 'Onbekend Artikel',
+        'no-description': 'Geen beschrijving beschikbaar',
         
         // Management
         'inventory-management': 'Voorraadbeheer',
@@ -281,10 +289,38 @@ class TranslationManager {
 
     // Get translated item data based on current language
     getLocalizedItem(item) {
+        // Handle the case where item might be null or undefined
+        if (!item) {
+            return {
+                name: this.translate('unknown-item'),
+                description: this.translate('no-description')
+            };
+        }
+
+        let name, description;
+
+        // Handle multilingual name
+        if (typeof item.name === 'object' && item.name !== null) {
+            name = item.name[this.currentLanguage] || item.name.nl || item.name.en || this.translate('unknown-item');
+        } else if (typeof item.name === 'string') {
+            name = item.name;
+        } else {
+            name = this.translate('unknown-item');
+        }
+
+        // Handle multilingual description
+        if (typeof item.description === 'object' && item.description !== null) {
+            description = item.description[this.currentLanguage] || item.description.nl || item.description.en || this.translate('no-description');
+        } else if (typeof item.description === 'string') {
+            description = item.description || this.translate('no-description');
+        } else {
+            description = this.translate('no-description');
+        }
+
         return {
             ...item,
-            name: item.name?.[this.currentLanguage] || item.name?.nl || item.name?.en || item.name || 'Unknown Item',
-            description: item.description?.[this.currentLanguage] || item.description?.nl || item.description?.en || item.description || ''
+            name: name,
+            description: description
         };
     }
 
@@ -306,8 +342,16 @@ class TranslationManager {
 let translationManager;
 document.addEventListener('DOMContentLoaded', () => {
     translationManager = new TranslationManager();
+    window.translationManager = translationManager;
 });
 
 // Export for use in other files
 window.TranslationManager = TranslationManager;
-window.translationManager = translationManager;
+
+// Function to ensure translation manager is available
+window.getTranslationManager = function() {
+    if (!window.translationManager) {
+        window.translationManager = new TranslationManager();
+    }
+    return window.translationManager;
+};
