@@ -72,9 +72,36 @@ async function addItem(e) {
     e.preventDefault();
     
     const formData = new FormData();
-    formData.append('name', document.getElementById('itemName').value);
+    
+    // Collect multilingual name data
+    const nameData = {
+        nl: document.getElementById('itemNameNl').value.trim(),
+        en: document.getElementById('itemNameEn').value.trim()
+    };
+    
+    // Collect multilingual description data
+    const descriptionData = {
+        nl: document.getElementById('itemDescriptionNl').value.trim(),
+        en: document.getElementById('itemDescriptionEn').value.trim()
+    };
+    
+    // Validate that at least one language is filled for name
+    if (!nameData.nl && !nameData.en) {
+        alert('Please provide at least one name (Dutch or English)');
+        return;
+    }
+    
+    // If only one language is provided for name, copy it to the other
+    if (!nameData.nl && nameData.en) {
+        nameData.nl = nameData.en;
+    }
+    if (!nameData.en && nameData.nl) {
+        nameData.en = nameData.nl;
+    }
+    
+    formData.append('name', JSON.stringify(nameData));
     formData.append('location', document.getElementById('itemLocation').value);
-    formData.append('description', document.getElementById('itemDescription').value);
+    formData.append('description', JSON.stringify(descriptionData));
     formData.append('quantity', document.getElementById('itemQuantity').value);
 
     const imageFile = document.getElementById('itemImage').files[0];

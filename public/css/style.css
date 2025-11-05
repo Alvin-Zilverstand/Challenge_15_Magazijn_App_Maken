@@ -477,68 +477,82 @@ body {
     color: var(--vista-white);
 }
 
-/* Language Toggle Styles */
+/* Language Toggle Styles - Modern Button Design */
 .language-toggle {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     margin-right: 1rem;
 }
 
-.language-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 28px;
+.language-switcher {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.language-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.language-switcher:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
-.language-slider {
-    position: absolute;
+.language-btn {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    font-size: 0.9rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.language-btn.active {
+    background: linear-gradient(135deg, var(--vista-blue), var(--vista-coral));
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.language-btn.active::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--vista-coral);
-    transition: .4s;
-    border-radius: 34px;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shine 2s ease-in-out infinite;
 }
 
-.language-slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
 }
 
-input:checked + .language-slider {
-    background-color: var(--vista-blue);
+/* Focus styles for accessibility */
+.language-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
-input:checked + .language-slider:before {
-    transform: translateX(32px);
-}
-
-.language-label {
-    color: var(--vista-white);
-    font-weight: 500;
-    min-width: 20px;
-    text-align: center;
-}
-
-.language-label.active {
-    font-weight: bold;
+.language-btn:active {
+    transform: scale(0.98);
 }
 
 /* Language toggle for login page */
@@ -552,6 +566,24 @@ input:checked + .language-slider:before {
     margin-right: 0;
 }
 
-.language-toggle-container .language-label {
-    color: var(--vista-blue) !important;
+.language-switcher.login-page {
+    background-color: rgba(21, 78, 135, 0.1);
+    border: 1px solid rgba(21, 78, 135, 0.2);
+}
+
+.language-switcher.login-page:hover {
+    background-color: rgba(21, 78, 135, 0.15);
+}
+
+.language-switcher.login-page .language-btn {
+    color: var(--vista-blue);
+}
+
+.language-switcher.login-page .language-btn:hover {
+    color: var(--vista-coral);
+}
+
+.language-switcher.login-page .language-btn.active {
+    background: linear-gradient(135deg, var(--vista-blue), var(--vista-coral));
+    color: white;
 }

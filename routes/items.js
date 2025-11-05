@@ -53,9 +53,27 @@ router.get('/:id', auth, async (req, res) => {
 // Add new item (admin only)
 router.post('/', auth, adminOnly, upload.single('image'), async (req, res) => {
     try {
+        let name, description;
+        
+        // Parse multilingual name data
+        try {
+            name = typeof req.body.name === 'string' ? JSON.parse(req.body.name) : req.body.name;
+        } catch (e) {
+            // If parsing fails, assume it's a simple string and create multilingual object
+            name = { nl: req.body.name, en: req.body.name };
+        }
+        
+        // Parse multilingual description data
+        try {
+            description = typeof req.body.description === 'string' ? JSON.parse(req.body.description) : req.body.description;
+        } catch (e) {
+            // If parsing fails, assume it's a simple string and create multilingual object
+            description = { nl: req.body.description || '', en: req.body.description || '' };
+        }
+        
         const itemData = {
-            name: req.body.name,
-            description: req.body.description,
+            name: name,
+            description: description,
             location: req.body.location,
             quantity: parseInt(req.body.quantity)
         };
@@ -76,9 +94,27 @@ router.post('/', auth, adminOnly, upload.single('image'), async (req, res) => {
 // Update item (admin only)
 router.put('/:id', auth, adminOnly, upload.single('image'), async (req, res) => {
     try {
+        let name, description;
+        
+        // Parse multilingual name data
+        try {
+            name = typeof req.body.name === 'string' ? JSON.parse(req.body.name) : req.body.name;
+        } catch (e) {
+            // If parsing fails, assume it's a simple string and create multilingual object
+            name = { nl: req.body.name, en: req.body.name };
+        }
+        
+        // Parse multilingual description data
+        try {
+            description = typeof req.body.description === 'string' ? JSON.parse(req.body.description) : req.body.description;
+        } catch (e) {
+            // If parsing fails, assume it's a simple string and create multilingual object
+            description = { nl: req.body.description || '', en: req.body.description || '' };
+        }
+        
         const updateData = {
-            name: req.body.name,
-            description: req.body.description,
+            name: name,
+            description: description,
             location: req.body.location,
             quantity: parseInt(req.body.quantity)
         };

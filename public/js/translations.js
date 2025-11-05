@@ -180,27 +180,47 @@ class TranslationManager {
         // Apply saved language preference
         this.applyTranslations();
         
-        // Set up language toggle if it exists
-        const languageToggle = document.getElementById('languageToggle');
-        if (languageToggle) {
-            languageToggle.addEventListener('change', (e) => {
-                this.setLanguage(e.target.checked ? 'en' : 'nl');
+        // Set up language toggle buttons if they exist
+        const nlBtn = document.getElementById('nlBtn');
+        const enBtn = document.getElementById('enBtn');
+        
+        if (nlBtn && enBtn) {
+            nlBtn.addEventListener('click', () => {
+                this.setLanguage('nl');
+                this.updateLanguageButtons();
             });
             
-            // Set toggle state based on current language (Dutch is default/unchecked)
-            languageToggle.checked = this.currentLanguage === 'en';
-            this.updateLanguageLabels();
+            enBtn.addEventListener('click', () => {
+                this.setLanguage('en');
+                this.updateLanguageButtons();
+            });
+            
+            // Set initial button states
+            this.updateLanguageButtons();
         }
     }
 
-    updateLanguageLabels() {
-        const nlLabel = document.getElementById('nlLabel');
-        const enLabel = document.getElementById('enLabel');
+    updateLanguageButtons() {
+        const nlBtn = document.getElementById('nlBtn');
+        const enBtn = document.getElementById('enBtn');
         
-        if (nlLabel && enLabel) {
-            nlLabel.classList.toggle('active', this.currentLanguage === 'nl');
-            enLabel.classList.toggle('active', this.currentLanguage === 'en');
+        if (nlBtn && enBtn) {
+            // Remove active class from both buttons
+            nlBtn.classList.remove('active');
+            enBtn.classList.remove('active');
+            
+            // Add active class to current language button
+            if (this.currentLanguage === 'nl') {
+                nlBtn.classList.add('active');
+            } else {
+                enBtn.classList.add('active');
+            }
         }
+    }
+
+    // Keep the old method for backward compatibility (in case it's used elsewhere)
+    updateLanguageLabels() {
+        this.updateLanguageButtons();
     }
 
     setLanguage(lang) {

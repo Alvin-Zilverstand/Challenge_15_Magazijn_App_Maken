@@ -28,6 +28,14 @@ async function initializePage() {
     }
 }
 
+// Reload content when language changes
+function reloadContent() {
+    displayItems();
+}
+
+// Make reloadContent available globally for translation manager
+window.reloadContent = reloadContent;
+
 // Display user info
 function displayUserInfo() {
     const username = localStorage.getItem('username');
@@ -68,11 +76,21 @@ function getFilteredItems() {
         return items;
     }
     
-    return items.filter(item => 
-        item.name.toLowerCase().includes(searchTerm) || 
-        (item.description && item.description.toLowerCase().includes(searchTerm)) ||
-        item.location.toLowerCase().includes(searchTerm)
-    );
+    return items.filter(item => {
+        if (window.translationManager) {
+            const localizedItem = window.translationManager.getLocalizedItem(item);
+            return localizedItem.name.toLowerCase().includes(searchTerm) || 
+                   (localizedItem.description && localizedItem.description.toLowerCase().includes(searchTerm)) ||
+                   item.location.toLowerCase().includes(searchTerm);
+        } else {
+            // Fallback for when translation manager isn't loaded yet (default to Dutch)
+            const name = item.name?.nl || item.name?.en || item.name || '';
+            const description = item.description?.nl || item.description?.en || item.description || '';
+            return name.toLowerCase().includes(searchTerm) || 
+                   description.toLowerCase().includes(searchTerm) ||
+                   item.location.toLowerCase().includes(searchTerm);
+        }
+    });
 }
 
 // Display items based on current view mode
@@ -91,13 +109,19 @@ function displayGridView() {
     itemsGrid.classList.remove('d-none');
 
     const filteredItems = getFilteredItems();
-    itemsGrid.innerHTML = filteredItems.map(item => `
+    itemsGrid.innerHTML = filteredItems.map(item => {
+        const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
+            name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
+            description: item.description?.nl || item.description?.en || item.description || ''
+        };
+        
+        return `
         <div class="col-md-4 col-lg-3">
             <div class="card item-card">
-                <img src="${item.imageUrl || '/images/default-item.png'}" class="item-image" alt="${item.name}">
+                <img src="${item.imageUrl || '/images/default-item.png'}" class="item-image" alt="${localizedItem.name}">
                 <div class="card-body">
-                    <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text text-muted">${item.description || 'No description available'}</p>
+                    <h5 class="card-title">${localizedItem.name}</h5>
+                    <p class="card-text text-muted">${localizedItem.description || 'No description available'}</p>
                     <p class="card-text">Location: ${item.location}</p>
                     <p class="card-text">Quantity: ${item.quantity}</p>
                     <p class="card-text">Reserved: ${item.reserved || 0}</p>
@@ -108,7 +132,8 @@ function displayGridView() {
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Display items in list view
@@ -120,11 +145,17 @@ function displayListView() {
 
     const itemsListBody = document.getElementById('itemsListBody');
     const filteredItems = getFilteredItems();
-    itemsListBody.innerHTML = filteredItems.map(item => `
+    itemsListBody.innerHTML = filteredItems.map(item => {
+        const localizedItem = window.translationManager ? window.translationManager.getLocalizedItem(item) : {
+            name: item.name?.nl || item.name?.en || item.name || 'Onbekend Artikel',
+            description: item.description?.nl || item.description?.en || item.description || ''
+        };
+        
+        return `
         <tr>
-            <td><img src="${item.imageUrl || '/images/default-item.png'}" class="item-thumbnail" alt="${item.name}"></td>
-            <td>${item.name}</td>
-            <td>${item.description || 'No description available'}</td>
+            <td><img src="${item.imageUrl || '/images/default-item.png'}" class="item-thumbnail" alt="${localizedItem.name}"></td>
+            <td>${localizedItem.name}</td>
+            <td>${localizedItem.description || 'No description available'}</td>
             <td>${item.location}</td>
             <td>${item.quantity}</td>
             <td>${item.reserved || 0}</td>
@@ -133,7 +164,8 @@ function displayListView() {
                 <button class="btn btn-sm btn-danger" onclick="deleteItem('${item._id}')">Delete</button>
             </td>
         </tr>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Load reservations
