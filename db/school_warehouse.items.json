@@ -1,0 +1,912 @@
+[{
+  "_id": {
+    "$oid": "690b150035debc2b507e710e"
+  },
+  "name": {
+    "en": "Netgear Router",
+    "nl": "Netgear Router"
+  },
+  "description": {
+    "en": "Netgear WiFi router with three antennas for strong coverage and a stable connection. Suitable for everyday use, streaming, and gaming.",
+    "nl": "Netgear WiFi-router met drie antennes voor sterk bereik en een stabiele verbinding. Geschikt voor dagelijks gebruik, streamen en gamen."
+  },
+  "location": "Heerlen",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762333952965-217359885.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T09:12:32.991Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:12:32.991Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b1dba35debc2b507e7185"
+  },
+  "name": {
+    "en": "HPE network-switch",
+    "nl": "HPE netwerk-switch"
+  },
+  "description": {
+    "en": "Professional network switch with multiple Ethernet ports for fast and reliable wired connections. Perfect for business networks, servers, or larger home setups.",
+    "nl": "Professionele netwerk-switch met meerdere Ethernet-poorten voor betrouwbare en snelle bekabelde verbindingen. Ideaal voor bedrijfsnetwerken, servers of grotere thuisnetwerken."
+  },
+  "location": "Maastricht",
+  "quantity": 10,
+  "imageUrl": "/images/items/item-1762336186624-692937132.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T09:49:46.631Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:49:46.631Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b1e4435debc2b507e71c2"
+  },
+  "name": {
+    "en": "computer monitor",
+    "nl": "computer monitor"
+  },
+  "description": {
+    "en": "Full HD monitor with a clear display and slim bezels. Great for everyday use, work, media, and gaming.",
+    "nl": "Full HD-monitor met helder beeld en dunne randen. Geschikt voor dagelijks gebruik, werk, media en gaming."
+  },
+  "location": "Sittard",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762336324397-286054098.png",
+  "reserved": 5,
+  "createdAt": {
+    "$date": "2025-11-05T09:52:04.401Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:43:24.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b1f1935debc2b507e71c7"
+  },
+  "name": {
+    "en": "HDMI cable",
+    "nl": "HDMI kabel"
+  },
+  "description": {
+    "en": "HDMI cable with ferrite cores for interference reduction. Features gold-plated connectors for reliable HD audio/video transmission between TVs, monitors, gaming consoles, and other HDMI devices.",
+    "nl": "HDMI-kabel met ferrietkern voor storingonderdrukking. Voorzien van vergulde connectoren voor betrouwbare HD audio/video-overdracht tussen tv's, monitoren, gameconsoles en andere HDMI-apparaten."
+  },
+  "location": "Heerlen",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762336537233-258395909.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T09:55:37.243Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:55:37.243Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b1f6235debc2b507e71cc"
+  },
+  "name": {
+    "en": "CyberPowerPC gaming desktop",
+    "nl": "CyberPowerPC gaming desktop"
+  },
+  "description": {
+    "en": "CyberPowerPC gaming desktop with tempered glass panel showcasing RGB lighting. Features illuminated fans, visible internal components, and comes with matching RGB gaming keyboard and mouse. Designed for high-performance gaming with eye-catching aesthetics.",
+    "nl": "CyberPowerPC gaming desktop met glazen zijpaneel en RGB-verlichting. Voorzien van verlichte ventilatoren, zichtbare interne componenten en inclusief bijpassend RGB gaming toetsenbord en muis. Ontworpen voor krachtige gaming prestaties met opvallende esthetiek."
+  },
+  "location": "Heerlen",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762336610278-294967324.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T09:56:50.280Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:56:50.280Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b202a35debc2b507e71d1"
+  },
+  "name": {
+    "en": "USB-C cable",
+    "nl": "USB-C kabel"
+  },
+  "description": {
+    "en": "USB-C charging cables and adapters. Features reversible USB-C connectors for convenient plug-in from either direction. Compatible with modern smartphones, tablets, laptops, and other USB-C devices for fast charging and data transfer.",
+    "nl": "USB-C oplaadkabels en adapters. Voorzien van omkeerbare USB-C connectoren voor gemakkelijk aansluiten vanaf beide kanten. Geschikt voor moderne smartphones, tablets, laptops en andere USB-C apparaten voor snel opladen en datatransfer."
+  },
+  "location": "Maastricht",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762336810580-276271022.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:00:10.583Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:00:10.583Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b206335debc2b507e71d6"
+  },
+  "name": {
+    "en": "DCE KLEIN",
+    "nl": "DCE KLEIN"
+  },
+  "description": {
+    "en": "DCE KLEIN network adapter with TX/RX Ethernet ports. Features power and transmission indicator LEDs for monitoring connection status. Compact design for reliable data communication and network connectivity applications.",
+    "nl": "DCE KLEIN netwerkadapter met TX/RX Ethernet-poorten. Voorzien van power- en transmissie-indicatielampjes voor monitoring van verbindingsstatus. Compact ontwerp voor betrouwbare datacommunicatie en netwerkconnectiviteit."
+  },
+  "location": "Heerlen",
+  "quantity": 5,
+  "imageUrl": "/images/items/item-1762336867904-363624133.png",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:01:07.917Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:01:07.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b20be35debc2b507e71db"
+  },
+  "name": {
+    "en": "HDD",
+    "nl": "HDD"
+  },
+  "description": {
+    "en": "Internal hard disk drive (HDD) with exposed mechanism showing spinning platter, read/write head actuator arm, and circuit board. Provides data storage for computers and servers with mechanical components for reading and writing digital information.",
+    "nl": "Interne harde schijf (HDD) met zichtbaar mechanisme inclusief draaiende plaat, lees/schrijfkop actuatorarm en printplaat. Biedt gegevensopslag voor computers en servers met mechanische componenten voor het lezen en schrijven van digitale informatie."
+  },
+  "location": "Sittard",
+  "quantity": 10,
+  "imageUrl": "/images/items/item-1762336958564-240058321.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:02:38.567Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:02:38.567Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b212635debc2b507e71e0"
+  },
+  "name": {
+    "en": "External Blu-ray drive",
+    "nl": "Externe Blu-ray drive"
+  },
+  "description": {
+    "en": "External Blu-ray drive with textured black finish. Features USB 3.0 and USB-C connectivity for reading and writing Blu-ray discs, DVDs, and CDs. Portable slim design for laptops and desktops without built-in optical drives.",
+    "nl": "Externe Blu-ray drive met gestructureerde zwarte afwerking. Voorzien van USB 3.0 en USB-C connectiviteit voor het lezen en schrijven van Blu-ray discs, dvd's en cd's. Draagbaar slim ontwerp voor laptops en desktops zonder ingebouwde optische drive."
+  },
+  "location": "Maastricht",
+  "quantity": 20,
+  "imageUrl": "/images/items/item-1762337062917-846000877.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:04:22.925Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:04:22.925Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b216235debc2b507e71e5"
+  },
+  "name": {
+    "en": "NETGEAR switch",
+    "nl": "NETGEAR switch"
+  },
+  "description": {
+    "en": "NETGEAR GS324TP 24-port Gigabit Ethernet PoE+ managed switch with 2 SFP ports. Features Power over Ethernet on ports 1-24 (30W max per port), status LEDs, and rack-mountable design for business networking and IP device power delivery.",
+    "nl": "NETGEAR GS324TP 24-poorts Gigabit Ethernet PoE+ managed switch met 2 SFP-poorten. Voorzien van Power over Ethernet op poorten 1-24 (30W max per poort), statusindicatoren en rack-monteerbaar ontwerp voor zakelijke netwerken en IP-apparaat stroomvoorziening."
+  },
+  "location": "Sittard",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762337122183-65891618.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:05:22.218Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:05:22.218Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b21cf35debc2b507e71ec"
+  },
+  "name": {
+    "en": "TOSHIBA 2.5-inch HDD",
+    "nl": "TOSHIBA 2.5-inch HDD"
+  },
+  "description": {
+    "en": "TOSHIBA 2.5-inch internal hard drive with SATA interface. Designed for laptops and portable devices, offering reliable data storage in a compact form factor with mechanical spinning disk technology.",
+    "nl": "TOSHIBA 2,5-inch interne harde schijf met SATA-interface. Ontworpen voor laptops en draagbare apparaten, biedt betrouwbare gegevensopslag in een compacte vormfactor met mechanische draaiende schijf technologie."
+  },
+  "location": "Heerlen",
+  "quantity": 10,
+  "imageUrl": "/images/items/item-1762337231487-235622162.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:07:11.489Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:07:11.489Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b223135debc2b507e71f1"
+  },
+  "name": {
+    "en": "2,5-inch laptop HDD",
+    "nl": "2,5-inch laptop HDD"
+  },
+  "description": {
+    "en": "2.5-inch laptop hard drive with exposed blue circuit board showing internal components. Features SATA connector interface and visible spinning disk mechanism. Standard form factor for notebook computer data storage upgrades and replacements.",
+    "nl": "2,5-inch laptop harde schijf met zichtbare blauwe printplaat waarop interne componenten te zien zijn. Voorzien van SATA-connector interface en zichtbaar draaiend schijfmechanisme. Standaard formaat voor data-opslag upgrades en vervangingen in notebook computers."
+  },
+  "location": "Heerlen",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762337329644-263204031.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:08:49.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:08:49.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b227f35debc2b507e71f6"
+  },
+  "name": {
+    "en": "Crucial P3 SSD",
+    "nl": "Crucial P3 SSD"
+  },
+  "description": {
+    "en": "Crucial P3 M.2 NVMe SSD with PCIe 3.0 interface. Slim M.2 2280 form factor solid-state drive offering fast read/write speeds for system boot, application loading, and data storage in compatible laptops and desktops.",
+    "nl": "Crucial P3 M.2 NVMe SSD met PCIe 3.0 interface. Slanke M.2 2280 vormfactor solid-state drive die snelle lees/schrijfsnelheden biedt voor systeemopstart, applicatie-laden en gegevensopslag in compatibele laptops en desktops."
+  },
+  "location": "Maastricht",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762337407188-273253468.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:10:07.190Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:10:07.190Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b22cd35debc2b507e71fb"
+  },
+  "name": {
+    "en": "drawing tablet",
+    "nl": "tekentablet"
+  },
+  "description": {
+    "en": "Pen display drawing tablet with built-in screen and pressure-sensitive stylus. Features programmable express keys for workflow customization. Ideal for digital artists, illustrators, and graphic designers working with photo editing and illustration software.",
+    "nl": "Pen display tekentablet met ingebouwd scherm en drukgevoelige stylus. Voorzien van programmeerbare sneltoetsen voor workflow-aanpassing. Ideaal voor digitale kunstenaars, illustratoren en grafisch ontwerpers die werken met fotobewerking- en illustratiesoftware."
+  },
+  "location": "Sittard",
+  "quantity": 5,
+  "imageUrl": "/images/items/item-1762337485383-599696829.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:11:25.385Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:11:25.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b232535debc2b507e7202"
+  },
+  "name": {
+    "en": "black USB stick",
+    "nl": "zwarte USB stick"
+  },
+  "description": {
+    "en": "A black 64 GB USB 3.0 flash drive, featuring a loop for attaching to a keyring.",
+    "nl": "Een zwarte 64 GB USB 3.0-stick, voorzien van een oogje voor een sleutelhanger."
+  },
+  "location": "Maastricht",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762337573536-112460822.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:12:53.538Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:12:53.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b236f35debc2b507e7207"
+  },
+  "name": {
+    "en": "HP Chromebook",
+    "nl": "HP Chromebook"
+  },
+  "description": {
+    "en": "A grey HP Chromebook laptop.",
+    "nl": "Een grijze HP Chromebook-laptop"
+  },
+  "location": "Heerlen",
+  "quantity": 15,
+  "imageUrl": "/images/items/item-1762337647152-811870729.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:14:07.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:14:07.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b26e235debc2b507e7210"
+  },
+  "name": {
+    "en": "Raspberry Pi 4 Model B",
+    "nl": "Raspberry Pi 4 Model B"
+  },
+  "description": {
+    "en": "Raspberry Pi 4 Model B Single-Board Computer. Compact and powerful microcomputer featuring a quad-core processor, multiple USB ports, dual HDMI output, and Gigabit Ethernet. Equipped with a 40-pin GPIO header for extensive hardware interfacing and customization. Ideal for hobbyists, developers, and educators working on electronics projects, media servers, or custom computing solutions.",
+    "nl": "Raspberry Pi 4 Model B Single-Board Computer. Compacte en krachtige microcomputer met een quad-core processor, meerdere USB-poorten, dubbele HDMI-uitgang en Gigabit Ethernet. Uitgerust met een 40-pins GPIO-header voor uitgebreide hardware-interfacing en aanpassingen. Ideaal voor hobbyisten, ontwikkelaars en educatieve instellingen die werken aan elektronica-projecten, mediaservers of op maat gemaakte computeroplossingen."
+  },
+  "location": "Heerlen",
+  "quantity": 15,
+  "imageUrl": "/images/items/item-1762338530678-745200924.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:28:50.681Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:28:50.681Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b272435debc2b507e7217"
+  },
+  "name": {
+    "en": "Yellow Ethernet Cables",
+    "nl": "Gele Ethernetkabels"
+  },
+  "description": {
+    "en": "Yellow Ethernet Cables. High-quality network cables with transparent RJ45 connectors, featuring color-coded internal wiring for easy verification. Equipped with a secure latch mechanism to prevent accidental disconnection. Ideal for setting up or expanding a wired home or office network, providing a reliable and visible internet connection for routers, computers, and other devices.",
+    "nl": "Gele Ethernetkabels. Hoogwaardige netwerkkabels met transparante RJ45-connectoren, voorzien van gekleurde interne bedrading voor eenvoudige verificatie. Uitgerust met een vergrendelingsmechanisme om onbedoeld loskoppelen te voorkomen. Ideaal voor het opzetten of uitbreiden van een bekabeld thuis- of kantoornetwerk, en zorgt voor een betrouwbare en zichtbare internetverbinding voor routers, computers en andere apparaten."
+  },
+  "location": "Heerlen",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762338596125-667343123.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:29:56.127Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:29:56.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b278c35debc2b507e721c"
+  },
+  "name": {
+    "en": "Black Ethernet Cables with Red Connectors",
+    "nl": "Zwarte Ethernetkabels met Rode Connectoren"
+  },
+  "description": {
+    "en": "Black Ethernet Cables with Red Connectors. High-performance network cables featuring a durable black sheath and transparent red-tinted RJ45 connectors for easy identification. Designed with a secure latch to ensure a stable and reliable connection. Ideal for organizing complex network setups or color-coding connections in data centers, offices, or home networks.",
+    "nl": "Zwarte Ethernetkabels met Rode Connectoren. Hoogwaardige netwerkkabels met een duurzame zwarte mantel en transparante, roodgetinte RJ45-connectoren voor eenvoudige herkenning. Ontworpen met een vergrendelingsclip om een stabiele en betrouwbare verbinding te garanderen. Ideaal voor het organiseren van complexe netwerkopstellingen of het kleurcoderen van verbindingen in datacenters, kantoren of thuisnetwerken."
+  },
+  "location": "Maastricht",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762338700058-216183679.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:31:40.060Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:31:40.060Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b27d235debc2b507e7223"
+  },
+  "name": {
+    "en": "Wired Black Keyboard",
+    "nl": "Bekabeld Zwart Toetsenbord"
+  },
+  "description": {
+    "en": "Wired Black Keyboard. A standard layout keyboard featuring a full set of keys, including a numeric keypad, function keys, and arrow keys for comprehensive control. Designed with a simple, durable black chassis and a reliable wired connection. Ideal for office work, daily computing tasks, and any user needing a straightforward, no-frills input device.",
+    "nl": "Bekabeld Zwart Toetsenbord. Een toetsenbord met standaardindeling, uitgerust met een volledige set toetsen, inclusief numeriek toetsenblok, functietoetsen en pijltoetsen voor uitgebreide controle. Ontworpen met een eenvoudige, duurzame zwarte behuizing en een betrouwbare bekabelde verbinding. Ideaal voor kantoorwerk, dagelijkse computertaken en voor elke gebruiker die een eenvoudig en functioneel invoerapparaat nodig heeft."
+  },
+  "location": "Sittard",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762338770859-626525192.png",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:32:50.862Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:32:50.862Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b2a0935debc2b507e723a"
+  },
+  "name": {
+    "en": "VGA Videocable",
+    "nl": "VGA Videokabel"
+  },
+  "description": {
+    "en": "VGA Video Cable. A standard VGA cable featuring a durable D-sub 15-pin connector with a blue housing on each end. Designed for reliable analog video transmission between a computer and a monitor or projector. Ideal for connecting legacy displays, office equipment, and for presentations in environments that still use VGA ports.",
+    "nl": "VGA Videokabel. Een standaard VGA-kabel met een duurzame D-sub 15-pins connector met een blauwe behuizing aan elke kant. Ontworpen voor betrouwbare analoge videotransmissie tussen een computer en een monitor of projector. Ideaal voor het aansluiten van oudere displays, kantoorequipment en voor presentaties in omgevingen die nog steeds VGA-poorten gebruiken."
+  },
+  "location": "Maastricht",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762339337231-860786354.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:42:17.233Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:42:17.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b2a4135debc2b507e723f"
+  },
+  "name": {
+    "en": "Red Ethernet Cable.",
+    "nl": "Rode Ethernetkabel."
+  },
+  "description": {
+    "en": "Red Ethernet Cable. A high-performance network cable with a vibrant red sheath and a transparent RJ45 connector for easy identification. Designed for a secure, high-speed wired connection. Ideal for color-coding network ports in a server rack, office, or home setup to simplify cable management and troubleshooting.",
+    "nl": "Rode Ethernetkabel. Een hoogwaardige netwerkkabel met een opvallend rode mantel en een transparante RJ45-connector voor eenvoudige herkenning. Ontworpen voor een veilige, snelle bekabelde verbinding. Ideaal voor het kleurcoderen van netwerkpoorten in een serverrack, kantoor of thuisopstelling om kabelbeheer en probleemoplossing te vereenvoudigen."
+  },
+  "location": "Maastricht",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762339393022-389531031.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T10:43:13.024Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T10:43:13.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b3a3f35debc2b507e7292"
+  },
+  "name": {
+    "en": "Blue CAT6 Ethernet Cable.",
+    "nl": "Blauwe CAT6 Ethernetkabel."
+  },
+  "description": {
+    "en": "Blue Coiled CAT6 Ethernet Cable. A retractable CAT6 network cable in a vibrant blue, designed to stretch and recoil for easy storage and reduced clutter. Certified for high-speed performance with clear \"CAT6\" and \"PATCH CABLE\" markings. Ideal for temporary connections, travel, or neat desk setups where a standard long cable is impractical.",
+    "nl": "Blauwe (Opgerolde) CAT6 Ethernetkabel. Een intrekbare CAT6-netwerkkabel in een helderblauwe kleur, ontworpen om uit te rekken en terug te veren voor eenvoudige opberging en minder kabelwarboel. Gecertificeerd voor hoge snelheden met duidelijke \"CAT6\" en \"PATCH CABLE\" markeringen. Ideaal voor tijdelijke verbindingen, reizen of nette bureauopstellingen waar een standaard lange kabel onpraktisch is."
+  },
+  "location": "Maastricht",
+  "quantity": 15,
+  "imageUrl": "/images/items/item-1762343487683-425439694.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T11:51:27.686Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T11:51:27.686Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b3aae35debc2b507e7297"
+  },
+  "name": {
+    "en": "Orange Flat Ethernet Cable.",
+    "nl": "Oranje Platte Ethernetkabel."
+  },
+  "description": {
+    "en": "Orange Flat Ethernet Cable. A slim, flat-profile network cable in a bright orange, designed to run under carpets or along walls without creating a trip hazard. Features a durable construction and standard RJ45 connectors. Ideal for home theater setups, office cubicles, and any situation requiring a discreet, easily concealable network connection.",
+    "nl": "Oranje Platte Ethernetkabel. Een slanke netwerkkabel met een plat profiel in een helderoranje kleur, ontworpen om onder tapijten of langs muren te leggen zonder struikelgevaar te veroorzaken. Voorzien van een duurzame constructie en standaard RJ45-connectoren. Ideaal voor home theater-opstellingen, kantoorkubussen en elke situatie waar een discrete, makkelijk weg te werken netwerkverbinding nodig is."
+  },
+  "location": "Sittard",
+  "quantity": 20,
+  "imageUrl": "/images/items/item-1762343598522-590746235.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T11:53:18.525Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T11:53:18.525Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b3b0a35debc2b507e72a0"
+  },
+  "name": {
+    "en": "Trust Wireless Mouse.",
+    "nl": "Trust Draadloze Muis."
+  },
+  "description": {
+    "en": "Trust Wireless Mouse. Ergonomic wireless mouse featuring a sleek, dark gray and black design for comfortable handling. Equipped with a scroll wheel and side buttons for enhanced navigation and productivity. Ideal for everyday office tasks, general computing, and users seeking a reliable, cable-free input solution for their desktop or laptop.",
+    "nl": "Trust Draadloze Muis. Ergonomische draadloze muis met een strak, donkergrijs en zwart ontwerp voor comfortabel gebruik. Uitgerust met een scrollwiel en zijknoppen voor verbeterde navigatie en productiviteit. Ideaal voor dagelijkse kantoortaken, algemeen computergebruik en voor gebruikers die een betrouwbare, draadloze invoeroplossing zoeken voor hun desktop of laptop."
+  },
+  "location": "Heerlen",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762343690686-711501396.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T11:54:50.688Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T11:54:50.688Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b405a35debc2b507e72b9"
+  },
+  "name": {
+    "en": "Laptop Power Adapter.",
+    "nl": "Laptopvoeding."
+  },
+  "description": {
+    "en": "Laptop Power Adapter. Black laptop power adapter featuring a compact design with a labeled surface displaying specifications and identification marks. Comes complete with a power cable equipped with a three-prong plug on one end and a cylindrical connector on the other. Ideal for powering laptops, replacing lost or damaged adapters, and users needing a reliable power solution for their computing devices.",
+    "nl": "Laptopvoeding. Zwarte laptopvoeding met een compact ontwerp en een gelabeld oppervlak dat specificaties en identificatiemerken weergeeft. Wordt geleverd met een stroomkabel die is uitgerust met een drijfstekker aan de ene kant en een cilindrische connector aan de andere kant. Ideaal voor het voeden van laptops, het vervangen van verloren of beschadigde adapters en voor gebruikers die een betrouwbare stroomoplossing nodig hebben voor hun computerapparatuur."
+  },
+  "location": "Sittard",
+  "quantity": 15,
+  "imageUrl": "/images/items/item-1762345050512-670926874.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:17:30.515Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:17:30.515Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b40fd35debc2b507e72c6"
+  },
+  "name": {
+    "en": "Laptop Power Adapter.",
+    "nl": "Laptopvoeding."
+  },
+  "description": {
+    "en": "Laptop Power Adapter. Black power adapter featuring a compact design with a labeled surface displaying various certification marks (such as CE, FCC) and technical specifications. Comes with a black power cable, neatly secured with a strap, terminating in a small cylindrical connector. Ideal for powering laptops, replacing lost or damaged adapters, and users needing a reliable power solution for their computing devices.",
+    "nl": "Laptopvoeding. Zwarte voeding met een compact ontwerp en een gelabeld oppervlak dat diverse certificeringsmerken (zoals CE, FCC) en technische specificaties toont. Wordt geleverd met een zwarte stroomkabel, netjes vastgezet met een bindriem, die eindigt in een kleine cilindrische connector. Ideaal voor het voeden van laptops, het vervangen van verloren of beschadigde adapters en voor gebruikers die een betrouwbare stroomoplossing nodig hebben voor hun computerapparatuur."
+  },
+  "location": "Heerlen",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762345213978-310163775.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:20:13.980Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:20:13.980Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b415835debc2b507e72cb"
+  },
+  "name": {
+    "en": "Power Cables.",
+    "nl": "Stroomkabels."
+  },
+  "description": {
+    "en": "Power Cables. Set of two black power cables featuring distinct plugs: one with a three-prong design and another labeled \"NRG Y\" with a three-hole structure. Both cables are constructed with a braided texture for enhanced durability. Ideal for connecting electronic devices to power outlets, replacing old or worn-out cables, and users needing reliable power cords for their equipment.",
+    "nl": "Stroomkabels. Set van twee zwarte stroomkabels met verschillende stekkers: een met een drijfstekker-ontwerp en een andere met het label \"NRG Y\" en een driegatenstructuur. Beide kabels zijn uitgevoerd met een geweven textuur voor extra duurzaamheid. Ideaal voor het aansluiten van elektronische apparaten op stopcontacten, het vervangen van oude of versleten kabels en voor gebruikers die betrouwbare stroomkabels nodig hebben voor hun apparatuur."
+  },
+  "location": "Sittard",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762345304470-724719329.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:21:44.473Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:21:44.473Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b422b35debc2b507e72dc"
+  },
+  "name": {
+    "en": "Cisco Wireless Access Point.",
+    "nl": "Cisco Wireless Access Point."
+  },
+  "description": {
+    "en": "Cisco Wireless Access Point. White, oval-shaped network device with light gray edges, featuring a clean and modern design. The surface is printed with the \"Cisco\" logo and a signal wave icon. Ideal for expanding wireless network coverage in homes or offices, providing reliable Wi-Fi connectivity, and users seeking a high-quality, branded networking solution.",
+    "nl": "Cisco Wireless Access Point. Wit, ovaalvormig netwerkapparaat met lichtgrijze randen, met een strak en modern ontwerp. Het oppervlak is bedrukt met het \"Cisco\"-logo en een golfvormig icoon. Ideaal voor het uitbreiden van het draadloze netwerkbereik in huizen of kantoren, het bieden van betrouwbare Wi-Fi-connectiviteit en voor gebruikers die een hoogwaardige, merkgebonden netwerkoplossing zoeken."
+  },
+  "location": "Maastricht",
+  "quantity": 15,
+  "imageUrl": "/images/items/item-1762345515154-496202533.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:25:15.158Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:25:15.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b42aa35debc2b507e72e1"
+  },
+  "name": {
+    "en": "Spire Computer Cooling Fan.",
+    "nl": "Spire Computerkoeler."
+  },
+  "description": {
+    "en": "Spire Computer Cooling Fan. Black square cooling fan featuring a multi-blade design for efficient airflow. The center has a red and black label with the \"Spire\" brand name, \"CE\" and \"FC\" certifications, \"12V\" voltage, and the company website. The base includes mounting holes for easy installation. Ideal for improving computer cooling, enhancing system performance and longevity, and PC builders looking for a reliable and stylish cooling component.",
+    "nl": "Spire Computerkoeler. Zwarte, vierkante koelfan met een ontwerp met meerdere bladen voor een efficiënte luchtstroom. In het midden zit een rood-zwart label met de merknaam \"Spire\", \"CE\"- en \"FC\"-certificeringen, \"12V\"-spanning en de website van het bedrijf. De basis bevat montagegaten voor eenvoudige installatie. Ideaal voor het verbeteren van de computerkoeling, het verhogen van de systeemprestaties en levensduur, en voor PC-bouwers die op zoek zijn naar een betrouwbare en stijlvolle koelcomponent."
+  },
+  "location": "Sittard",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762345642788-930429120.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:27:22.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:27:22.790Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b42e735debc2b507e72e8"
+  },
+  "name": {
+    "en": "Dell 65W Power Adapter.",
+    "nl": "Dell 65W Voeding."
+  },
+  "description": {
+    "en": "Dell 65W Power Adapter. Black power adapter with a labeled surface displaying \"65W\", \"Made in China\", model numbers \"CN - 06TM1C - 72438\" and \"57H - 80B3 - A04\", part number \"DP/N 06TM1C\", and various certification marks. Includes a power cable secured with a strap. Ideal for powering Dell laptops, replacing a lost or faulty adapter, and users requiring a genuine 65W power solution for their device.",
+    "nl": "Dell 65W Voeding. Zwarte voeding met een gelabeld oppervlak dat \"65W\", \"Made in China\", modelnummers \"CN - 06TM1C - 72438\" en \"57H - 80B3 - A04\", artikelnummer \"DP/N 06TM1C\" en diverse certificeringsmerken toont. Wordt geleverd met een stroomkabel die met een bindriem is vastgezet. Ideaal voor het voeden van Dell-laptops, het vervangen van een verloren of defecte adapter en voor gebruikers die een originele 65W-stroomoplossing voor hun apparaat nodig hebben."
+  },
+  "location": "Heerlen",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762345703072-894447262.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:28:23.076Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:28:23.076Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b433935debc2b507e72ed"
+  },
+  "name": {
+    "en": "Electronic Device Interfaces.",
+    "nl": "Interfaces van Elektronische Apparaten."
+  },
+  "description": {
+    "en": "Electronic Device Interfaces. Close-up view of two multi-pin digital signal interfaces, such as HDMI. The left interface is equipped with a metal protective component, while the right one has no additional protection. The image clearly shows the metal construction and pin layout. Ideal for connecting high-definition audio/video devices, replacing damaged ports, and for technicians or users needing to identify specific digital connection types.",
+    "nl": "Interfaces van Elektronische Apparaten. Close-up van twee digitale signaalinterfaces met meerdere pinnen, zoals HDMI. De linkere interface is uitgerust met een metalen beschermingsonderdeel, terwijl de rechter geen extra bescherming heeft. De afbeelding toont duidelijk de metalen constructie en de indeling van de pinnen. Ideaal voor het aansluiten van high-definition audio-/videoapparaten, het vervangen van beschadigde poorten en voor technici of gebruikers die specifieke digitale connectietypes moeten identificeren."
+  },
+  "location": "Maastricht",
+  "quantity": 10,
+  "imageUrl": "/images/items/item-1762345785595-88237180.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:29:45.606Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:29:45.606Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b438735debc2b507e72f2"
+  },
+  "name": {
+    "en": "USB Data Cables.",
+    "nl": "USB-Datakabels."
+  },
+  "description": {
+    "en": "USB Data Cables. A collection of black USB data cables featuring various connectors, including USB-A to USB-B. Some cables are coiled and secured with straps for storage, while others are extended to showcase the connector details. The connectors bear the USB logo, and some cables are printed with text like \"CABLE\" and \"SPEED\". Ideal for connecting printers, external hard drives, and other peripherals, replacing old cables, and for users needing a versatile set of USB cables for their devices.",
+    "nl": "USB-Datakabels. Een verzameling zwarte USB-datakabels met diverse connectoren, waaronder USB-A naar USB-B. Sommige kabels zijn opgerold en met bindriemen vastgezet voor opslag, terwijl andere zijn uitgerekt om de connectordetails te tonen. De connectoren dragen het USB-logo en sommige kabels zijn bedrukt met tekst zoals \"CABLE\" en \"SPEED\". Ideaal voor het aansluiten van printers, externe harde schijven en andere randapparatuur, het vervangen van oude kabels en voor gebruikers die een veelzijdige set USB-kabels nodig hebben voor hun apparaten."
+  },
+  "location": "Maastricht",
+  "quantity": 10,
+  "imageUrl": "/images/items/item-1762345863362-70103036.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:31:03.364Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:31:03.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b43dd35debc2b507e72fb"
+  },
+  "name": {
+    "en": "Memory Modules.",
+    "nl": "Geheugenmodules."
+  },
+  "description": {
+    "en": "Memory Modules. Two memory modules featuring green circuit boards populated with multiple black rectangular memory chips. The bottom edge of each module has gold contact fingers (the \"connector\") for installation in a motherboard. Ideal for upgrading computer RAM, increasing system performance for multitasking and demanding applications, and for PC builders or technicians needing replacement or additional memory.",
+    "nl": "Geheugenmodules. Twee geheugenmodules met groene printplaten die zijn bevolkt met meerdere zwarte rechthoekige geheugenchips. De onderrand van elke module heeft gouden contactpinnen (de \"connector\") voor installatie in een moederbord. Ideaal voor het upgraden van computer-RAM, het verhogen van de systeemprestaties voor multitasking en veeleisende applicaties, en voor PC-bouwers of technici die vervangend of extra geheugen nodig hebben."
+  },
+  "location": "Maastricht",
+  "quantity": 100,
+  "imageUrl": "/images/items/item-1762345949231-699677075.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:32:29.233Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:32:29.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b444235debc2b507e7300"
+  },
+  "name": {
+    "en": "Fiber Optic Patch Cables.",
+    "nl": "Vezelkabels (Patchkabels)."
+  },
+  "description": {
+    "en": "Fiber Optic Patch Cables. Two yellow fiber optic patch cables, each terminated with blue LC-type connectors that include white protective caps. The cables feature an orange transition section and a beige protective boot near the connector. Ideal for high-speed network connections, linking network switches and routers in data centers, and for users requiring reliable, long-distance data transmission with minimal signal loss.",
+    "nl": "Vezelkabels (Patchkabels). Twee gele vezelkabels (patchkabels), elk afgesloten met blauwe LC-type connectoren die zijn voorzien van witte beschermkapjes. De kabels hebben een oranje overgangssectie en een beige beschermhoes nabij de connector. Ideaal voor hoogwaardige netwerkaansluitingen, het verbinden van netwerkswitches en routers in datacenters, en voor gebruikers die betrouwbare transmissie over lange afstanden nodig hebben met minimaal signaalverlies."
+  },
+  "location": "Sittard",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762346050013-927798070.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:34:10.015Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:34:10.015Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b454735debc2b507e7313"
+  },
+  "name": {
+    "en": "Western Digital 160GB Hard Drive.",
+    "nl": "Western Digital 160GB Harde Schijf."
+  },
+  "description": {
+    "en": "Western Digital WD1600AAJS 160GB Hard Drive. Reliable 3.5-inch mechanical hard drive from the WD Caviar Blue series, offering 160GB of storage capacity. Features SATA interface and 8MB cache for efficient data transfer. Ideal for desktop computers, data storage, and system upgrades for users seeking dependable performance. Manufactured in Malaysia in December 2011.",
+    "nl": "Western Digital WD1600AAJS 160GB Harde Schijf. Betrouwbare 3,5-inch mechanische harde schijf uit de WD Caviar Blue-serie, met een opslagcapaciteit van 160GB. Uitgerust met SATA-interface en 8MB cache voor efficiënte datatransfer. Ideaal voor desktopcomputers, gegevensopslag en systeemupgrades voor gebruikers die op zoek zijn naar betrouwbare prestaties. Geproduceerd in Maleisië in december 2011."
+  },
+  "location": "Maastricht",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762346311164-977510887.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:38:31.167Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:38:31.167Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b45b535debc2b507e7318"
+  },
+  "name": {
+    "en": "Western 500GB Hard Drive.",
+    "nl": "Western Digital 500GB Harde Schijf."
+  },
+  "description": {
+    "en": "Western Digital WD5000AZLX 500GB Hard Drive. High-performance 3.5-inch desktop hard drive from the WD Blue series, offering 500GB of storage capacity. Features SATA interface and 32MB cache for fast and efficient data transfer. Ideal for desktop PCs, external storage solutions, and system upgrades for users needing reliable performance and ample space. Designed with a sleek silver and black finish.",
+    "nl": "Western Digital WD5000AZLX 500GB Harde Schijf. Krachtige 3,5-inch desktop harde schijf uit de WD Blue-serie, met een opslagcapaciteit van 500GB. Uitgerust met SATA-interface en 32MB cache voor snelle en efficiënte datatransfer. Ideaal voor desktop-pc's, externe opslagoplossingen en systeemupgrades voor gebruikers die betrouwbare prestaties en voldoende ruimte nodig hebben. Ontworpen met een strakke zilveren en zwarte afwerking."
+  },
+  "location": "Maastricht",
+  "quantity": 50,
+  "imageUrl": "/images/items/item-1762346421502-666936247.jpeg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:40:21.504Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:40:21.504Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b45f235debc2b507e731d"
+  },
+  "name": {
+    "en": "Lenovo Laptop Power Adapter.",
+    "nl": "Lenovo Laptopvoeding."
+  },
+  "description": {
+    "en": "Lenovo Laptop Power Adapter. Original Lenovo power adapter designed for reliable and safe charging of Lenovo laptops. Features a compact black design with a fixed power cable, secured by a strap for easy storage and portability. The adapter body displays the Lenovo logo, various certification marks, and technical specifications. Ideal as a replacement or spare charger for home, office, or travel use.",
+    "nl": "Lenovo Laptopvoeding. Originele Lenovo-voeding ontworpen voor het betrouwbaar en veilig opladen van Lenovo-laptops. Heeft een compact zwart ontwerp met een vast netsnoer, dat met een riem is vastgezet voor eenvoudige opberging en draagbaarheid. Op de adapter staan het Lenovo-logo, diverse certificeringsmarkeringen en technische specificaties. Ideaal als vervangende of reserve lader voor thuis, op kantoor of voor onderweg."
+  },
+  "location": "Heerlen",
+  "quantity": 25,
+  "imageUrl": "/images/items/item-1762346482019-437770739.jpg",
+  "reserved": 0,
+  "createdAt": {
+    "$date": "2025-11-05T12:41:22.022Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T12:41:22.022Z"
+  },
+  "__v": 0
+}]

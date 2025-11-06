@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "690b13c695d53f15a489ab86"
+  },
+  "username": "admin",
+  "password": "$2a$10$xUcDAWuSgK7tfz0uK5YahOf3MvuLGBivk/aR39PkkGsgLW/VkAoUC",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-11-05T09:07:18.340Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:07:18.340Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b13c695d53f15a489ab88"
+  },
+  "username": "student",
+  "password": "$2a$10$JNYlFNqqw0FS03NQQidw/OQAgPkOvhbMlI2GvC2K6Ss8hhFkuvggy",
+  "email": "123456@vistacollege.nl",
+  "role": "student",
+  "createdAt": {
+    "$date": "2025-11-05T09:07:18.464Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:07:18.464Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690b1b6959d6cb9b9a4695c4"
+  },
+  "username": "joey",
+  "password": "$2a$10$Netvip2ux/bJuERjWHbii.xV2drF3WYNLju1kbbkHQy256tk1PRQ6",
+  "email": "521924@vistacollege.nl",
+  "role": "student",
+  "createdAt": {
+    "$date": "2025-11-05T09:39:53.546Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-05T09:39:53.546Z"
+  },
+  "__v": 0
+}]
